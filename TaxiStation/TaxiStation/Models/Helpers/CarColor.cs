@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TaxiStation.Models.Helpers
+﻿namespace TaxiStation.Models.Helpers
 {
     public enum CarColor
     {
@@ -13,6 +7,7 @@ namespace TaxiStation.Models.Helpers
         Yellow,
         Red,
         Blue,
-        Green
+        Green,
+        Grey
     }
 }

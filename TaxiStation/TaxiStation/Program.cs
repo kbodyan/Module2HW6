@@ -1,5 +1,8 @@
-﻿using System;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using TaxiStation.Models.Helpers;
+using TaxiStation.Models.Helpers.Abstraction;
+using TaxiStation.Services;
+using TaxiStation.Services.Abstractions;
 
 namespace TaxiStation
 {
@@ -8,15 +11,15 @@ namespace TaxiStation
         public static void Main(string[] args)
         {
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<ICreateParkService, CreateParkService>()
-                .AddTransient<ICreateSectionService, CreateSectionService>()
-                .AddTransient<INumberOfKindsInSectionService, NumberOfKindsInSectionService>()
-                .AddTransient<ISortByWeightService, SortByWeightService>()
-                .AddTransient<IFindAnimalByKindService, FindAnimalByKindService>()
+                .AddSingleton<ICreateListOfCarsService, CreateListOfCarsService>()
+                .AddTransient<ICreateTaxyStationService, CreateTaxyStationService>()
+                .AddTransient<ITaxiStationService, TaxiStationService>()
+                .AddTransient<ICarComparerByFuelConsumption, CarComparerByFuelConsumption>()
                 .AddTransient<Starter>()
+                .AddTransient<Application>()
                 .BuildServiceProvider();
             var start = serviceProvider.GetService<Starter>();
-            start.Run();
+            start.Start(serviceProvider);
         }
     }
 }

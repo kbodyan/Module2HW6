@@ -5,5 +5,10 @@
         public double EngineVolume { get; set; }
         public double FuelConsumption { get; set; }
         public bool HasGas { get; set; }
+
+        public override double GetFuelConsumption()
+        {
+            return FuelConsumption;
+        }
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TaxiStation.Models.Helpers
+﻿namespace TaxiStation.Models.Helpers
 {
     public enum CarModel
     {
@@ -20,6 +14,7 @@ namespace TaxiStation.Models.Helpers
         Forester,
         C200,
         C300,
-        S500
+        S500,
+        Primera
     }
 }
